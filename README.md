@@ -1,1 +1,1 @@
-This my app named GameMarket. This project is used for IAB207
+This my app named GameMarket. This app is used for IAB207. 
