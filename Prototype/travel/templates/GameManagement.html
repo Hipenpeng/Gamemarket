@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1>The Games You Post</h1>
+
+        <h2>PC Games<h2>
+        {% for pc in pc %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{pc.image}}" alt="{{pc.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{pc.condition}}</small>
+                  <p>Seller: {{pc.user_name}}</p>
+                  <h5 class="mt-0">{{pc.name}}</h5>
+                  <p>{{pc.description}}</p>
+                  <p>${{pc.currency}}</p>
+                  <a href="{{url_for('updateP', id=pc.id)}}" class="btn btn-primary">Update Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+         <h2>Xbox Games</h2>
+        {% for xbox in xbox %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{xbox.image}}" alt="{{xbox.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{xbox.condition}}</small>
+                  <p>Seller: {{xbox.user_name}}</p>
+                  <p>{{xbox.description}}</p>
+                  <p>${{xbox.currency}}</p>
+                  <a href="{{url_for('updateX', id=xbox.id)}}" class="btn btn-primary">Update Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        <h2>Nintendo Games</h2>
+        {% for nintendo in nintendo %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{nintendo.image}}" alt="{{nintendo.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{nintendo.condition}}</small>
+                  <p>Seller: {{nintendo.user_name}}</p>
+                  <h5 class="mt-0">{{nintendo.name}}</h5>
+                  <p>{{nintendo.description}}</p>
+                  <p>${{nintendo.currency}}</p>
+                  <a href="{{url_for('updateN', id=nintendo.id)}}" class="btn btn-primary">Update Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+          <h2>Playstation Games</h2>
+        {% for playstation in playstation %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{playstation.image}}" alt="{{playstation.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{playstation.condition}}</small>
+                  <p>Seller: {{playstation.user_name}}</p>
+                  <h5 class="mt-0">{{playstation.name}}</h5>
+                  <p>{{playstation.description}}</p>
+                  <p>${{playstation.currency}}</p>
+                  <a href="{{url_for('updatePS', id=playstation.id)}}" class="btn btn-primary">Update Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

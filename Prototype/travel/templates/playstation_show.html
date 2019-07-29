@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+  <div class="container">
+    <div class="row mt-5 mb-3">
+      <div class="col-md-12">
+        <div class="float-left">
+          <h1 class="mb-0">PlayStation: {{ playstation.name }}</h1>
+          <p>{{ playstation.description }}</p>
+        </div>
+
+        <div class="float-right text-right">
+          <h2 id="exchange-rate">${{ playstation.currency }}</h2>
+        </div>
+      </div>
+    </div>
+{{wtf.quick_form(bookform)}}
+    <!-- Destination -->
+    <div class="row" style="margin-bottom:-20%">
+      <div class="col-md-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div class="media">
+              <img class="align-self-start mr-3" src="{{ playstation.image }}" alt="{{ playstation.image }}" style="max-width: 250px;">
+              <div class="media-body">
+                <small class="font-weight-bold text-muted">{{playstation.condition}}</small>
+                <p>Seller: {{playstation.user_name}}</p>
+                <h5 class="mt-0">{{ playstation.name }}</h5>
+                <p>{{ playstation.description }}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="map" style="width: 100%; height: 350px;"></div>
+      </div>
+    </div>
+
+    <hr>
+
+   <!-- Comments -->
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
+  </div>
+</div>
+<!-- The form is sent the route with the destination id -->
+{{wtf.quick_form(form, "/playstation/{0}/comment".format(playstation.id))}}
+
+<div id="comments">
+  {% for comment in comments %}
+  <div class="row border-bottom mt-2 mb-5">
+    <div class="col-md-12">
+      <b>{{ comment.user.name }} <span class="ml-2 text-muted">{{ comment.created_at.strftime('%d %B %Y at %I:%M %p') }}</span></b>
+      <p>{{ comment.text }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+  <script>
+    // JavaScript to load map
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfzXVZWsBSaQanjnsAYqd3ZU0oajo2iIw&callback=initMap" async defer></script>
+{% endblock %}
+  </div>

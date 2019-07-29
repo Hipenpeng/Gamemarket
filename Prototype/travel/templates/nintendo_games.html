@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1>Nintendo Games</h1> <a href="game/create/nintendo" class="btn btn-primary">Add Game</a>
+        {% for nintendo in nintendo %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{nintendo.image}}" alt="{{nintendo.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{nintendo.condition}}</small>
+                  <p>Seller: {{nintendo.user_name}}</p>
+                  <h5 class="mt-0">{{nintendo.name}}</h5>
+                  <p>{{nintendo.description}}</p>
+                  <p>${{nintendo.currency}}</p>
+                  <a href="{{url_for('showN', id=nintendo.id)}}" class="btn btn-primary">View Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

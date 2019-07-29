@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <div class="container">
+    <div class="row justify-content-center mt-5 pb-4">
+      <div class="col-md-8">
+        <div class="jumbotron shadow py-4 mb-5 ">
+          <h1 class="text-center">Shop now!       <i class="material-icons" style="font-size:70%;">shopping_cart</i></h1>
+          <form class="form-inline d-flex flex-nowrap">
+            <select class="form-control flex-grow-1 my-1 mr-sm-2" id="inlineFormCustomSelectPref" onchange="location = this.value;">
+              <option selected value="">Select a console...</option>
+              <option value="pc_games"><a href=pc_games>PC</a></option>
+              <option value="xbox_games">Xbox</option>
+              <option value="playstation_games">PlayStation</option>
+              <option value="nintendo_games">Nintendo</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container" style="margin-bottom:5%;">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://cdn.dribbble.com/users/1268263/screenshots/2918193/casparnonner_lolchampionship_logo_1c.png" alt="France">
+        <div class="card-body">
+          <h5 class="card-title">League of Legends</h5>
+          <p class="card-text">Game Description, (console), (game price), (sold by who).</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://hdqwalls.com/download/overwatch-game-all-heroes-800x600.jpg" alt="United Kingdom">
+        <div class="card-body">
+          <h5 class="card-title">Overwatch</h5>
+          <p class="card-text">Game Description, (console), (game price), (sold by who).</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="http://rjwattenhofer.com/products/gaming-desktop-wallpapers-backgrounds/downloads/cs-go-800x600-14.jpg" alt="Italy">
+        <div class="card-body">
+          <h5 class="card-title">CS:GO</h5>
+          <p class="card-text">Game Description, (console), (game price), (sold by who).</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+  </div>
+  </div>
+{% endblock %}

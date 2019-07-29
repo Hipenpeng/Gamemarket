@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1>Xbox Games</h1> <a href="game/create/xbox" class="btn btn-primary">Add Game</a>
+        {% for xbox in xbox %}
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{xbox.image}}" alt="{{xbox.name}}" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{xbox.condition}}</small>
+                  <p>Seller: {{xbox.user_name}}</p>
+                  <p>{{xbox.description}}</p>
+                  <p>${{xbox.currency}}</p>
+                  <a href="{{url_for('showX', id=xbox.id)}}" class="btn btn-primary">View Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

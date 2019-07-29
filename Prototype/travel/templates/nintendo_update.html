@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+
+<div class="container" style="margin-bottom:5%;">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="float-left">
+          <h1 class="mb-0">Nintendo: {{ xbox.name }}</h1>
+          <p>{{ xbox.description }}</p>
+        </div>
+
+        <div class="float-right text-right">
+          <h2 id="exchange-rate">${{ xbox.currency }}</h2>
+        </div>
+
+      </div>
+    </div>
+
+
+   <div class="row mt-5">
+      <div class="col-md-12">
+ <div class="card my-3">
+          <div class="card-body">
+            <div class="media">
+              <img class="align-self-start mr-3" src="{{ xbox.image }}" alt="{{ xbox.image }}" style="max-width: 250px;">
+              <div class="media-body">
+                <small class="font-weight-bold text-muted">{{xbox.condition}}</small>
+                  <p>Seller: {{xbox.user_name}}</p>
+                <h5 class="mt-0">{{ xbox.name }}</h5>
+                <p>{{ xbox.description }}</p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="container" style="margin-bottom:5%;">
+    <div class="row mt-5">
+      <div class="col-md-12">
+
+        <h1>Update Game</h1>
+        <p>Update all details about game.</p>
+
+        {{wtf.quick_form(formX)}}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

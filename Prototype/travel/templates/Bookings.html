@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1>Your Orders</h1>
+
+
+         <h2>Xbox Games</h2>
+        {% for xboxOder in xboxOder %}
+
+
+
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{xboxOder.image}}" alt="" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{xboxOder.date}}</small>
+                  <p>Seller: {{xboxOder.owner_name}}</p>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+<h2>PC Games</h2>
+        {% for pcOder in pcOder %}
+
+
+
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{pcOder.image}}" alt="" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{pcOder.date}}</small>
+                  <p>Seller: {{pcOder.owner_name}}</p>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+
+          <h2>Nintendo Games</h2>
+        {% for nintendoOder in nintendoOder %}
+
+
+
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{nintendoOder.image}}" alt="" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{nintendoOder.date}}</small>
+                  <p>Seller: {{nintendoOder.owner_name}}</p>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+ <h2>Playstation Games</h2>
+        {% for playstationOder in playstationOder %}
+
+
+
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{playstationOder.image}}" alt="" style="max-width: 350px;">
+                <div class="media-body align-self-center">
+                  <small class="font-weight-bold text-muted">{{playstationOder.date}}</small>
+                  <p>Seller: {{playstationOder.owner_name}}</p>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
